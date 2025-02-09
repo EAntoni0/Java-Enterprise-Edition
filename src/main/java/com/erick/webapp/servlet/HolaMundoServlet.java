@@ -19,7 +19,7 @@ public class HolaMundoServlet extends HttpServlet {
         // Obtener el PrintWriter para escribir la respuesta
         PrintWriter out = resp.getWriter();
 
-        String msg = "Hola";
+        String msg = "Hola jakarta ee";
 
         // Escribir el contenido HTML de la respuesta
         out.print("""
