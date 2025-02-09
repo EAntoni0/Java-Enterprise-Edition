@@ -1,3 +1,4 @@
+
 package com.erick.webapp.servlet;
 
 import java.io.IOException;
@@ -9,17 +10,18 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/hola-mundo")
-public class HolaMundoServlet extends HttpServlet {
+@WebServlet("/parametros/url-get")
+public class ParametrosGetServlet extends HttpServlet {
+
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // Establecer el tipo de contenido de la respuesta como HTML
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+
         resp.setContentType("text/html");
 
         // Obtener el PrintWriter para escribir la respuesta
         PrintWriter out = resp.getWriter();
 
-        String msg = "Hola jakarta EE";
+        String msg = req.getParameter("saludo");
 
         // Escribir el contenido HTML de la respuesta
         out.print("""
@@ -39,5 +41,7 @@ public class HolaMundoServlet extends HttpServlet {
                 """);
 
         out.print("<h1>" + msg + "</h1");
+
     }
+    
 }
